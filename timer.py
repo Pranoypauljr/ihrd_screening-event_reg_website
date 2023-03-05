@@ -1,4 +1,3 @@
-import time
 def countdown():
     flag=0
     days=1
