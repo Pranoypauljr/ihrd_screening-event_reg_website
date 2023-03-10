@@ -1,9 +1,17 @@
+import time
+#global flag,days,hrs,mins,secs
+flag=0
+days=1
+hrs=23
+mins=59
+secs=10
 def countdown():
     flag=0
     days=1
     hrs=23
     mins=59
     secs=10
+    #global flag,days,hrs,mins,secs
     while(flag==0):
         timer = '{:02d}:{:02d}:{:02d}:{:02d}'.format(days,hrs,mins, secs)
         time.sleep(1)
@@ -25,4 +33,3 @@ def countdown():
         else:
             secs-=1
         print(timer, end="\r")
-countdown()

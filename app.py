@@ -2,11 +2,12 @@ from flask import Flask,render_template
 import time
 app=Flask(__name__)
 import time
-from timer import countdown
-
+# from timer import countdown,secs
+# import threading
+# t1 = threading.Thread(target=countdown)
+# t1.start()
 @app.route('/')
 def index():
-    countdown()
     return render_template('index.html')
 @app.route('/admin')
 def new():
