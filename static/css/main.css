@@ -5,4 +5,11 @@ body{
     background-attachment: fixed;
     height: 100%;
     background-position: center;
+    @font-face{
+        font-family: "Handjet";
+        src: url('/static/fonts/HandjetCircle-Regular.ttf');
+    }
+    font-family: "Handjet";
+    font-size: xx-large;
+    color: white;
 }

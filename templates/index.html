@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
 {% block head %}
 <link rel="stylesheet" href="static/css/main.css">
+<link rel="icon" type="image/x-icon" href="static\images\favicon.png">
 {% endblock %}
 {% block body %}
 <form action="/" method="POST" enctype="multipart/form-data">
     <label for="fname">First Name:</label>
-    <input type="text" name="fname">
+    <input type="text" name="fname" required>
     <br>
     <label for="lname">Last Name:</label>
-    <input type="text" name="lname">
+    <input type="text" name="lname" required>
     <br>
     <label for="email">Email:</label>
-    <input type="text" name="email">
+    <input type="text" name="email" required>
     <br>
     <label for="phno">Phno:</label>
-    <input type="number" name="phno" id="phnos">
+    <input type="number" name="phno" id="phnos" required>
     <br>
-    <button type="submit">Submit</button>
+    <button type="submit" onclick="alert('data submitted')">Submit</button>
 </form>
 {% endblock %}

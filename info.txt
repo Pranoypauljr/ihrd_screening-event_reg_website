@@ -1,3 +1,7 @@
 Website for registration
 Create a website for registration of an online event. The site should have an admin login for displaying the registration list and a well designed form for registration.  It should display time remaining to the start of event and also the full schedule of the event in a suitable way along with pictures.
 
+tasks to complete in backend
+1.orderby rows based on time inserted(so if we want to treat customers based on fcfs priority)
+2.enable delete option to remove entries from table.
+3.try converting timer.py code to js and implement it.

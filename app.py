@@ -15,17 +15,21 @@ class usr(db.Model):
     user_fname=db.Column(db.String(500),nullable=False)
     user_lname=db.Column(db.String(500),nullable=False)
     user_email=db.Column(db.String(500),nullable=False)
-    user_phno=db.Column(db.Integer,nullable=False)
+    user_phno=db.Column(db.Integer,nullable=False,unique=True)
     
     def __repr__(self):
         return '<user_data %r>' % self.user_id
-
 count=1
-
 @app.route('/',methods=['POST','GET'])
 def index():
     global count
     if(request.method=='POST'):
+        ##below code is to cache the primary key value to ensure unique values are assiged to new registrations each time.
+        for i in usr.query.all():
+            if count==i.user_id:
+                count=len(usr.query.all())+1
+                break
+        ##unique code till here. 
         fname=request.form['fname']
         lname=request.form['lname']
         email=request.form['email']
