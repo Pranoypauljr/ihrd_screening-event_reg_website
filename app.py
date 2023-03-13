@@ -18,14 +18,14 @@ class usr(db.Model):
     user_phno=db.Column(db.Integer,nullable=False)
     
     def __repr__(self):
-        return '<users %r>' % self.users
+        return '<user_data %r>' % self.user_id
 
 count=1
 
 @app.route('/',methods=['POST','GET'])
 def index():
     global count
-    if(request.method==['POST']):
+    if(request.method=='POST'):
         fname=request.form['fname']
         lname=request.form['lname']
         email=request.form['email']
