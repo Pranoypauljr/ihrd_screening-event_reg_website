@@ -2,5 +2,22 @@
 {% block head %}
 {% endblock %}
 {% block body %}
-
+<table border="3">
+    <tr>
+        <th id="txt">User ID</th>
+        <th id="txt">First Name</th>
+        <th id="txt">Last Name</th>
+        <th id="txt">Email</th>
+        <th id="txt">PhNo</th>
+    </tr>
+    {% for user in user_data %}
+    <tr>
+        <td><p>{{user.user_id}}</p></td>
+        <td><p>{{user.user_fname}}</p></td>
+        <td><p>{{user.user_lname}}</p></td>
+        <td><p>{{user.user_email}}</p></td>
+        <td><p>{{user.user_phno}}</p></td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

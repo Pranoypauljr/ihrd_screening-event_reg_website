@@ -1,18 +1,45 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request,redirect
 import time
+from flask_sqlalchemy import SQLAlchemy
 app=Flask(__name__)
 import time
 # from timer import countdown,secs
 # import threading
 # t1 = threading.Thread(target=countdown)
 # t1.start()
-@app.route('/')
+app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data.db'
+db=SQLAlchemy(app)
+class usr(db.Model):
+    user_id=db.Column(db.Integer,primary_key=True)
+    user_fname=db.Column(db.String(500),nullable=False)
+    user_lname=db.Column(db.String(500),nullable=False)
+    user_email=db.Column(db.String(500),nullable=False)
+    user_phno=db.Column(db.Integer,nullable=False)
+    
+    def __repr__(self):
+        return '<users %r>' % self.users
+
+count=1
+
+@app.route('/',methods=['POST','GET'])
 def index():
-    return render_template('index.html')
+    global count
+    if(request.method==['POST']):
+        fname=request.form['fname']
+        lname=request.form['lname']
+        email=request.form['email']
+        phno=request.form['phno']
+        new_usr=usr(user_id=count,user_fname=fname,user_lname=lname,user_email=email,user_phno=phno)
+        db.session.add(new_usr)
+        db.session.commit()
+        count+=1
+        return redirect('/')
+    else:
+        return render_template('index.html')
 @app.route('/admin')
 def new():
-    return render_template('admin.html')
-
-
+    user_data=usr.query.all()
+    return render_template('admin.html',user_data=user_data)
 if __name__== "__main__":
     app.run(debug=True)
