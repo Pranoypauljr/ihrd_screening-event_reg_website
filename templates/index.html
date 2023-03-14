@@ -2,8 +2,15 @@
 {% block head %}
 <link rel="stylesheet" href="static/css/main.css">
 <link rel="icon" type="image/x-icon" href="static\images\favicon.png">
+<script src="static\js\timer.js"></script>
 {% endblock %}
 {% block body %}
+<div>
+    <h1>Timer</h1>
+    <p>Hours: <span id="hours">00</span></p>
+    <p>Minutes: <span id="minutes">00</span></p>
+    <p>Seconds: <span id="seconds">00</span></p>
+</div>
 <form action="/" method="POST" enctype="multipart/form-data">
     <label for="fname">First Name:</label>
     <input type="text" name="fname" required>

@@ -5,3 +5,4 @@ tasks to complete in backend
 1.orderby rows based on time inserted(so if we want to treat customers based on fcfs priority)
 2.enable delete option to remove entries from table.
 3.try converting timer.py code to js and implement it.
+4.font handjet not linked.
