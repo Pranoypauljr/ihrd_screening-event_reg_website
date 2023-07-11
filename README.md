@@ -6,5 +6,5 @@ Create a website for registration of an online event. The site should have an ad
 # Figma Link
 https://www.figma.com/file/oBfSb9DeEtULRd4mcgf1s4/ihrd-web-reg-project?node-id=0%3A1&t=9GKEbBYm6b0T9KcL-1
 
-#Whats left to complete?
+# Whats left to complete?
 UI!!Backend is done.
